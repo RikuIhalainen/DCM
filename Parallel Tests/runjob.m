@@ -5,9 +5,9 @@ loadpaths
 loadsubj
 
 tasklist = {
-        'rundcm2' '{subjlist{subjidx,1} 1}'
-%         'rundcm2' '{subjlist{subjidx,1} 2}'
-%         'rundcm2' '{subjlist{subjidx,1} 3}'
+        'rundcm' '{subjlist{subjidx,1} 1}'
+%         'rundcm' '{subjlist{subjidx,1} 2}'
+%         'rundcm' '{subjlist{subjidx,1} 3}'
     };
 
 %% -- INITIALISATION
