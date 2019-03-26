@@ -1,0 +1,19 @@
+function setupdcms(listname, modinds)
+
+loadpaths
+loadsubj
+subjlist = eval(listname);
+
+models = {
+        'DMN'
+        'SAL'
+        'CEN'
+           };
+       
+for s = 1:size(subjlist,1)
+    for m = 1:length(modinds)
+        GCM{s,m} = [filepath subjlist{s,1} '_model' (models{modindex}) '.mat'];
+    end
+end
+M.X
+spm_dcm_peb_fit(GCM,
