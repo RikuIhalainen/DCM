@@ -65,7 +65,7 @@ dcmlist = {
     };
 
 anes = {
-    'coad'
+% %     'coad'
     'saco'
     'sege'
 %     'maju'

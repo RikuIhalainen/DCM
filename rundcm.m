@@ -2,12 +2,17 @@
 %       (cross-spectra) spectral data features. Input arguments are
 %       filename, model index number, and trial index number. ***
 
-function DCM = rundcm(datafile,modindex)
+function DCM = rundcm %(datafile,modindex)
 
 loadpaths
+loadsubj %added
 spm('Defaults','EEG'); % SPM-EEG modality interface, default settings
 
+subjects = length(anes); %added
 
+for s = 1:subjects %added
+    modindex = 4; %added
+    datafile = anes{s}; %added
 %% 
 %--------------------------------------------------------------------------
 % Location priors for dipoles - names and prior mean locations 
@@ -309,6 +314,7 @@ DCM.options.DATA = 0;
 % Fitting of DCM models
 
 fprintf('\n\n\n*** Processing model %d (%s) ***\n\n\n', modindex, models{modindex});
-DCM = spm_dcm_csd(DCM); % Estimate parameters of a DCM (complex) cross-spectral density
-save([datafile '_model' (models{modindex}) '.mat'],'DCM')
+%DCM = spm_dcm_csd(DCM); % Estimate parameters of a DCM (complex) cross-spectral density
+save([filepath2 datafile '_model' (models{modindex}) '.mat'],'DCM')
 end
+end %added
